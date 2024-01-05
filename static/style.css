@@ -1,0 +1,141 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 파일 선택 스타일 */
+.custom-file {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* 아이템들을 세로 중앙 정렬 */
+}
+
+.custom-file-input {
+    display: none; /* 기본 파일 선택 버튼 감추기 */
+}
+
+.custom-file-label {
+    padding: 10px;
+    background-color: #ffc1f2;
+    color: #2c0065;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1; /* 남은 공간을 최대한 확장 */
+}
+
+.custom-file-label:hover {
+    background-color: #eccbff;
+}
+
+/* 파일 정보 스타일 */
+#fileInfo {
+    margin-top: 20px;
+}
+
+/* 선택한 파일명 스타일 */
+#selectedFileName {
+    font-weight: bold;
+    margin-left: 10px;
+    max-width: calc(100% - 140px); /* 최대 너비 지정 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 80%; /* 반응형으로 조정 */
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* 폼 스타일 */
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px;
+    background-color: #FF69B4; /* 연분홍 계열 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #D154A2; /* 호버 시 연분홍 계열 */
+}
+
+/* 파일 업로드 스타일 */
+#fileInput {
+    display: none;
+}
+
+#fileLabel {
+    display: inline-block;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#fileLabel:hover {
+    background-color: #2980b9;
+}
+
+/* 파일 정보 스타일 */
+#fileInfo {
+    margin-top: 20px;
+}
+
+/* 선택한 파일과 결과 텍스트 스타일 */
+#selectedFile,
+#resultText {
+    margin: 10px 0;
+}
+
+/* 커스텀 파일 스타일 */
+.custom-file {
+    margin-bottom: 20px;
+}
+
+/* 선택된 파일명 스타일 */
+#selectedFileName {
+    font-weight: bold;
+}
+
+/* 변환된 텍스트 스타일 */
+#convertedText {
+    margin-top: 10px;
+    width: 100%; /* 화면 너비에 맞게 조정 */
+    font-size: 20px;
+}
+
+/* 모바일에 대한 스타일 추가 */
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%; /* 작은 화면에 대해 더 적응하도록 최대 너비를 줄임 */
+    }
+}

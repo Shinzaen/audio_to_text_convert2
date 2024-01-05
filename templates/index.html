@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Converter</title>
+    <!-- 최신 버전의 Bootstrap 스타일 시트를 추가합니다. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <h1>🔊 Audio to text converter 📝</h1>
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- 파일 업로드를 위한 폼을 생성합니다. -->
+    <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data" onsubmit="convertAudio(); return false;">
+        <div class="custom-file mb-3">
+            <!-- 파일을 선택할 수 있는 입력 필드를 생성합니다. -->
+            <input type="file" class="custom-file-input" id="audioFile" name="file" accept=".mp3, .wav" onchange="updateFileName()">
+            <label class="custom-file-label" for="audioFile">Choose audio file</label>
+        </div>
+
+        <!-- 변환 버튼을 추가합니다. -->
+        <button type="submit" class="btn btn-primary">Convert</button>
+    </form>
+
+    <!-- 선택한 파일명이 표시될 공간을 만듭니다. -->
+    <div id="selectedFileName" class="mt-3"></div>
+
+    <div class="mt-3">
+        <!-- 변환된 텍스트가 표시될 텍스트 박스를 생성합니다. -->
+        <h3>Converted Text:</h3>
+        <textarea id="convertedText" class="form-control" readonly rows="10"></textarea>
+    </div>
+</div>
+
+<!-- JavaScript 코드를 추가합니다. -->
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
