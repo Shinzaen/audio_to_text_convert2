@@ -16,11 +16,12 @@ socketio = SocketIO(app)
 ffmpeg_path = os.getenv("FFMPEG_PATH")
 
 # ffmpeg 경로 지정
-AudioSegment.converter = ffmpeg_path + "\\ffmpeg.exe"
+AudioSegment.converter = ffmpeg_path + "/ffmpeg"
 
 # 파일을 저장할 디렉토리 설정
-UPLOAD_FOLDER = 'C:\\Users\\SBA\\totxt'
+UPLOAD_FOLDER = '/home/crsst222/audio_to_text/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 def transcribe_audio(file_path):
     try:
@@ -98,4 +99,5 @@ def handle_message(msg):
     print('Received message: ' + msg)
 
 if __name__ == "__main__":
-    socketio.run(app, host="0.0.0.0", port=5000, use_reloader=False)
+    socketio.run(app, host="0.0.0.0", port=80, use_reloader=False)
+
